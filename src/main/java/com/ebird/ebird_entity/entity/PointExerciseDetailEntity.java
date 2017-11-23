@@ -1,4 +1,4 @@
-package com.ebird.ebird_entity;
+package com.ebird.ebird_entity.entity;
 
 import java.io.Serializable;
 import java.util.Date;
