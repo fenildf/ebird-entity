@@ -1,4 +1,5 @@
-package com.ebird.ebird_entity.entity;
+package com.ebird.ebird_entity.dto;
+
 
 import java.io.Serializable;
 import java.util.Date;
@@ -8,14 +9,16 @@ import java.util.Date;
  * @author Administrator
  *
  */
-public class PointExerciseDetailEntity implements Serializable {
+public class PointExerciseDetailDto implements Serializable {
 
 	private static final long serialVersionUID = 8598685062349072088L;
 	
-	  public Integer id            ;
 	  public Integer userId        ;
 	  public Integer bookId;//练习本Id
 	  public Integer pointId        ; //知识点ID
+	  public String pointName ;//知识点名称
+	  public Integer sort;//知识点排序号
+	  public Integer chaperSort;//章节排序号
 	  public Date nextExerciseTime ;//'计划下次练习时间',
 	  public Integer exerciseCycle ;// '知识点当前练习周期',
 	  public Integer skilled;//熟练度（0，1，2，3）
@@ -28,23 +31,8 @@ public class PointExerciseDetailEntity implements Serializable {
 	  public Integer  correctNumber ;//总正确数
 	  public Integer errorNumber   ;//总错误数
 	  public Date avgConsumingTime   ;//平均耗时
-	  public float weights       ;//练习权重
-	  public float  grasp         ;//掌握值
-	  public Integer state ;// state :答题状态（0：新增   1：上次答错    2：巩固）
+	  public Integer state;// state :答题状态（0：新增   1：上次答错    2：巩固）
 	  
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	
-	public Integer getSkilled() {
-		return skilled;
-	}
-	public void setSkilled(Integer skilled) {
-		this.skilled = skilled;
-	}
 	public Integer getUserId() {
 		return userId;
 	}
@@ -90,6 +78,13 @@ public class PointExerciseDetailEntity implements Serializable {
 	public void setPointId(Integer pointId) {
 		this.pointId = pointId;
 	}
+	
+	public Integer getChaperSort() {
+		return chaperSort;
+	}
+	public void setChaperSort(Integer chaperSort) {
+		this.chaperSort = chaperSort;
+	}
 	public Date getFirstExerciseDate() {
 		return firstExerciseDate;
 	}
@@ -132,17 +127,23 @@ public class PointExerciseDetailEntity implements Serializable {
 	public void setAvgConsumingTime(Date avgConsumingTime) {
 		this.avgConsumingTime = avgConsumingTime;
 	}
-	public float getWeights() {
-		return weights;
+	public String getPointName() {
+		return pointName;
 	}
-	public void setWeights(float weights) {
-		this.weights = weights;
+	public void setPointName(String pointName) {
+		this.pointName = pointName;
 	}
-	public float getGrasp() {
-		return grasp;
+	public Integer getSort() {
+		return sort;
 	}
-	public void setGrasp(float grasp) {
-		this.grasp = grasp;
+	public void setSort(Integer sort) {
+		this.sort = sort;
+	}
+	public Integer getSkilled() {
+		return skilled;
+	}
+	public void setSkilled(Integer skilled) {
+		this.skilled = skilled;
 	}
 	public Integer getState() {
 		return state;
